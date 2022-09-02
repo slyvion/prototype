@@ -12,7 +12,7 @@
         const Username = document.getElementById("form3Example1cg").value;
         const Password = document.getElementById("form3Example4cg").value;
         if(localStorage.getItem(Username) === null || JSON.parse(localStorage.getItem(Username)).Password !== Password){
-            alert("Invalid Login Information")
+            alert("Невалидни информации")
         }
         else {
             sessionStorage.setItem("Username", Username)

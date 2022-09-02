@@ -14,26 +14,26 @@
                 const PasswordConfirm = document.getElementById("form3Example4cdg").value;
                 let Valid = true;
                 if(Username == null || Username.length<=3 || Username.length >=18 || localStorage.getItem(Username) !== null) {
-                    alert("Invalid Username")
+                    alert("Невалидно корисничко име")
                     Valid = false;
                 }
                 if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(Email))
                 {
-                    alert("Invalid Email")
+                    alert("погрешно внесена e-mail адреса")
                     Valid = false;
                 }
                 if(Password.length<=5) {
-                    alert("Password is too short")
+                    alert("Лозинката е кратка")
                     Valid = false;
                 }
 
                 else if(Password !== PasswordConfirm){
-                    alert("Passwords are not identical")
+                    alert("Лозинките не се совпаѓаат")
                     Valid = false;
                 }
             if(Valid){
                 localStorage.setItem(Username, JSON.stringify({Email:Email,Password:Password}))
-                alert("Account Created Successfully")
+                alert("Вашиот профил е успешно креиран")
             }
             }
 
