@@ -5,7 +5,18 @@
     <title>Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
 
+
+        function Save(id){
+            Element = document.getElementById(id).value
+            localStorage.setItem(id, value);
+        }
+        function Load(id){
+            document.getElementById(id).value = localStorage.getItem(id);
+            console.log("asd")
+        }
+    </script>
 
 </head>
 <body>
@@ -16,55 +27,56 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="index.html">Home</a>
-            <a class="nav-item nav-link" href="About%20Us.html">About Us</a>
-            <a class="nav-item nav-link" href="Puzzles.html">Puzzles</a>
-            <a class="nav-item nav-link" href="Register.html">Register</a>
-            <a class="nav-item nav-link" href="Profile.html">My Profile</a>
+            <a class="nav-item nav-link active" href="index.html">Почетна</a>
+            <a class="nav-item nav-link" href="About%20Us.html">За нас</a>
+            <a class="nav-item nav-link" href="Puzzles.html">Загатки</a>
+            <a class="nav-item nav-link" href="Register.html">Регистрација</a>
+            <a class="nav-item nav-link" href="Login.html">Најава</a>
+            <a class="nav-item nav-link" href="Profile.html">Мојот Профил</a>
         </div>
     </div>
 </nav>
 <br>
 <div class="d-flex flex-row align-items-center justify-content-center" >
 <img src="ProfilePicture.png" height="200" width="200">
-    <h2>Username</h2>
+    <h2>Корисничко Име</h2>
 </div>
 <br> <br> <br>
 <div class="col">
     <div class="row">
         <div class="col-md-6 text-center" >
-            <h3>3x3 Progression</h3>
-            <input class="form-check-input" type="checkbox" value="" id="3x3Notation" > Notation <br>
+            <h3>Напредок на 3x3</h3>
+            <input class="form-check-input" type="checkbox" value="" id="3x3Notation" > Нотација <br>
             <input class="form-check-input" type="checkbox" value="" id="3x3F2L" > F2L <br>
             <input class="form-check-input" type="checkbox" value="" id="3x3OLL" > OLL <br>
             <input class="form-check-input" type="checkbox" value="" id="3x3PLL" > PLL <br>
-            <input  type="text" id="3x3Disabled" placeholder="best solve" value=""> <button>Save</button>
+            <input  type="text" id="3x3Disabled" placeholder="best solve" value=""> <button onclick="Save('3x3Disabled')">Save</button>
             <br> <br>
         </div>
         <div class="col-md-6 ">
-            <h3>2x2 Progression</h3>
-            <input class="form-check-input" type="checkbox" value="" id="2x2Notation" > Notation <br>
+            <h3>Напредок на 2x2</h3>
+            <input class="form-check-input" type="checkbox" value="" id="2x2Notation" > Нотација <br>
             <input class="form-check-input" type="checkbox" value="" id="2x2F2L" > First Layer <br>
             <input class="form-check-input" type="checkbox" value="" id="2x2OLL" > OLL <br>
             <input class="form-check-input" type="checkbox" value="" id="2x2PLL" > PLL <br>
-            <input type="text" id="2x2Disabled" placeholder="best solve" value="">  <button>Save</button>
+            <input type="text" id="2x2Disabled" placeholder="best solve" value="">  <button onclick="Save('2x2Disabled')">Save</button>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 text-center">
-            <h3>Skewb Progression</h3>
-            <input class="form-check-input" type="checkbox" value="" id="SkewbNotation" > Notation <br>
-            <input class="form-check-input" type="checkbox" value="" id="SkewbEdges" > Edges <br>
-            <input class="form-check-input" type="checkbox" value="" id="SkewbCenters" > Centers <br>
-            <input type="text" id="SkewbDisabled" placeholder="best solve" value=""> <button>Save</button>
+            <h3>Напредок на Skewb</h3>
+            <input class="form-check-input" type="checkbox" value="" id="SkewbNotation" > Нотација <br>
+            <input class="form-check-input" type="checkbox" value="" id="SkewbEdges" > Ќошиња <br>
+            <input class="form-check-input" type="checkbox" value="" id="SkewbCenters" > Центари <br>
+            <input type="text" id="SkewbDisabled" placeholder="best solve" value=""> <button  onclick="Save('SkewbDisabled')">Save</button>
             <br> <br>
         </div>
         <div class="col-md-6 ">
-            <h3>Pyraminx Progression</h3>
-            <input class="form-check-input" type="checkbox" value="" id="PyraminxNotation"> Notation <br>
-            <input class="form-check-input" type="checkbox" value="" id="PyraminxPhase1" > Phase 1 <br>
-            <input class="form-check-input" type="checkbox" value="" id="PyraminxPhase2"> Phase 2 <br>
-            <input type="text" id="PyraminxDisabled"  value="" placeholder="best solve"> <button>Save</button>
+            <h3>Напредок на Pyraminx</h3>
+            <input class="form-check-input" type="checkbox" value="" id="PyraminxNotation"> Нотација <br>
+            <input class="form-check-input" type="checkbox" value="" id="PyraminxPhase1" > Фаза 1 <br>
+            <input class="form-check-input" type="checkbox" value="" id="PyraminxPhase2"> Фаза 2 <br>
+            <input type="text" id="PyraminxDisabled"  value="" placeholder="best solve"> <button onclick="Save('PyraminxDisabled')">Save</button>
         </div>
     </div>
 </div>
