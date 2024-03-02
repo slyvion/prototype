@@ -21,7 +21,9 @@
         }
     }
 
-    <script src="js/page.js"></script>
+    function isLoggedIn(){
+        return sessionStorage.getItem("Username") !== null;
+    }
 
 </script>
 <body>
