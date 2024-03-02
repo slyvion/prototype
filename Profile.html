@@ -19,12 +19,9 @@
     </script>
 
     <script>
-        // Define isLoggedIn function
         function isLoggedIn(){
             return sessionStorage.getItem("Username") !== null;
         }
-
-        // Define LogOut function
         function LogOut(){
             sessionStorage.removeItem("Username");
             alert("Logged out successfully");
