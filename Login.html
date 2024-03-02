@@ -17,6 +17,7 @@
         else {
             sessionStorage.setItem("Username", Username)
             alert("Logging in")
+            window.location.href = "index.html"; // Redirect to index.html after login
         }
     }
 
@@ -41,9 +42,12 @@
             <a class="nav-item nav-link" href="index.html">Почетна</a>
             <a class="nav-item nav-link" href="About%20Us.html">За нас</a>
             <a class="nav-item nav-link" href="Puzzles.html">Загатки</a>
-            <a class="nav-item nav-link" href="Register.html">Регистрација</a>
             <a class="nav-item nav-link active" href="Login.html">Најава</a>
-            <a class="nav-item nav-link" href="Profile.html">Мој Профил</a>
+            <script>
+                if (isLoggedIn()) {
+                    document.write('<a class="nav-item nav-link" href="Profile.html">Мој Профил</a>');
+                }
+            </script>
         </div>
     </div>
 </nav>

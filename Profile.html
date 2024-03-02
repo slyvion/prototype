@@ -18,6 +18,19 @@
         }
     </script>
 
+    <script>
+        // Define isLoggedIn function
+        function isLoggedIn(){
+            return sessionStorage.getItem("Username") !== null;
+        }
+
+        // Define LogOut function
+        function LogOut(){
+            sessionStorage.removeItem("Username");
+            alert("Logged out successfully");
+            window.location.href = "index.html"; // Redirect to index.html after logout
+        }
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-nav navbar-center navbar-expand-lg navbar-dark bg-dark text-center text-light">
@@ -30,17 +43,31 @@
             <a class="nav-item nav-link" href="index.html">Почетна</a>
             <a class="nav-item nav-link" href="About%20Us.html">За нас</a>
             <a class="nav-item nav-link" href="Puzzles.html">Загатки</a>
-            <a class="nav-item nav-link" href="Register.html">Регистрација</a>
-            <a class="nav-item nav-link" href="Login.html">Најава</a>
-            <a class="nav-item nav-link active" href="Profile.html">Мој Профил</a>
+            <script>
+                if (!isLoggedIn()) {
+                    document.write('<a class="nav-item nav-link" href="Login.html">Најава</a>');
+                } else {
+                    document.write('<a class="nav-item nav-link active" href="Profile.html">Мој Профил</a>');
+                    document.write('<div id="logoutButton" class="ml-auto">');
+                    document.write('<button class="btn btn-outline-light" onclick="LogOut()">Одјави се</button>');
+                    document.write('</div>');
+                }
+            </script>
         </div>
     </div>
 </nav>
 <br>
-<div class="d-flex flex-row align-items-center justify-content-center" >
-<img src="ProfilePicture.png" height="200" width="200">
-    <h2 id="User">Корисничко Име</h2>
+<div class="d-flex flex-row align-items-center justify-content-center">
+    <img src="ProfilePicture.png" height="200" width="200">
+    <script>
+        if (isLoggedIn()) {
+            var juzer = sessionStorage.getItem("Username");
+            document.write('<h2 id="User">' + juzer + '</h2>');
+        }
+    </script>
 </div>
+
+
 <br> <br> <br>
 <div class="col">
     <div class="row">
